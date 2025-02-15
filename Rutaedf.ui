@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>599</width>
-    <height>342</height>
+    <width>753</width>
+    <height>443</height>
    </rect>
   </property>
   <property name="font">
@@ -35,9 +35,39 @@
    </property>
    <property name="palette">
     <palette>
-     <active/>
-     <inactive/>
-     <disabled/>
+     <active>
+      <colorrole role="Text">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>95</red>
+         <green>95</green>
+         <blue>95</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="Text">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>95</red>
+         <green>95</green>
+         <blue>95</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="Text">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>120</red>
+         <green>120</green>
+         <blue>120</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
     </palette>
    </property>
    <property name="font">

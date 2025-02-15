@@ -25,7 +25,7 @@ class Controlador(object):
         
     def verImagen(self):
         return self.__mi_dicom.verNifti()
-    
+       
 class Principal(object):
     def __init__(self): 
         self.__app = QApplication(sys.argv)

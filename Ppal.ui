@@ -16,19 +16,15 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <property name="windowIcon">
-   <iconset>
-    <normaloff>human-5937759_1280.webp</normaloff>human-5937759_1280.webp</iconset>
-  </property>
   <property name="autoFillBackground">
    <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="boton_iniciar">
+   <widget class="QPushButton" name="boton_iniciaredf">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>110</y>
+      <x>220</x>
+      <y>90</y>
       <width>201</width>
       <height>71</height>
      </rect>
@@ -40,11 +36,8 @@
       <bold>true</bold>
      </font>
     </property>
-    <property name="styleSheet">
-     <string notr="true">background-image: url(:/newPrefix/ai-generated-8774268_1920.jpg);</string>
-    </property>
     <property name="text">
-     <string>Iniciar</string>
+     <string>Ver EDF</string>
     </property>
     <property name="shortcut">
      <string/>
@@ -66,9 +59,9 @@
     <property name="geometry">
      <rect>
       <x>230</x>
-      <y>190</y>
-      <width>201</width>
-      <height>71</height>
+      <y>270</y>
+      <width>191</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
@@ -92,9 +85,9 @@
    <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>80</x>
       <y>20</y>
-      <width>471</width>
+      <width>491</width>
       <height>41</height>
      </rect>
     </property>
@@ -107,7 +100,39 @@
      </font>
     </property>
     <property name="text">
-     <string>Convertidor de EDF a Nifti</string>
+     <string>Visualizador de EDF y Nifti</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="boton_iniciarnifti">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>170</y>
+      <width>201</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>30</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Ver Nifti</string>
+    </property>
+    <property name="shortcut">
+     <string/>
+    </property>
+    <property name="autoDefault">
+     <bool>true</bool>
+    </property>
+    <property name="default">
+     <bool>true</bool>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>

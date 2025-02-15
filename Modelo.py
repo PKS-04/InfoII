@@ -23,19 +23,41 @@ class EDF():
         self.__fecha=None
         self.__edad=None       
     
-    def lector_mostraredf(self,edf_path,ver_canales=None):
-        try:
-            f = pyedflib.EdfReader(edf_path)
-            n = f.signals_in_file
-            signal_labels = f.getSignalLabels()
-            sigbufs = np.zeros((n, f.getNSamples()[0]))
-            for i in np.arange(n):
-                sigbufs[i, :] = f.readSignal(i)            
+    def lector_mostraredf(self,ver_canales=None):
+        existencia = os.path.exists('./edf')
+        if existencia is False:
+            carpeta = os.mkdir('./edf')
+            self.carpetaedf = os.path.dirname(carpeta)
+            return self.carpetaNueva
+        else:
+            self.carpetaedf = './edf'
+            for archivo in os.listdir(self.carpetaedf):
+                if archivo.endswith('.edf'):
+                    try:
+                        self.ruta = os.path.join(self.carpetaedf,archivo)
+                        self.read = pyedflib.EdfReader(self.ruta)
+                        f = pyedflib.EdfReader(self.ruta)
+                        n = f.signals_in_file
+                        signal_labels = f.getSignalLabels()
+                        frecuencia_muestreo = f.getSampleFrequency(0) 
+                        num_muestras = f.getNSamples()[0]  
+                        tiempo = np.arange(num_muestras) / frecuencia_muestreo  
+                        sigbufs = np.zeros((n, f.getNSamples()[0]))
+                        for i in np.arange(n):
+                            sigbufs[i, :] = f.readSignal(i).astype(float)            
+                            plt.plot(tiempo, sigbufs[i, :])
+                            plt.xlabel("Tiempo (s)")
+                            plt.ylabel("Amplitud (uV)") 
+                            plt.title(signal_labels[i])
+                            plt.show()
+                    except Exception as e:
+                        print(f"Error al visualizar el archivo EDF: {e}")
+                        return None, None,None 
 
-        except Exception as e:
-            print(f"Error al visualizar el archivo EDF: {e}")
-            return None, None,None 
-
+            
+                else:
+                    return False
+            
     def convertedf(self,edf,dicom):
         try:
             for archivo in os.listdir(edf):
@@ -148,7 +170,3 @@ class Imagen():
             return self.imagen
           else:
             return False
-
-
-
-
